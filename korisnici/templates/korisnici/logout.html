@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+        <h2>Odjavljeni ste sa stranice</h2>
+        
+            <div class="border-top pt-3">
+                <small class="text-muted"><a href="{% url 'login' %}">Loguj se ponovo</a>
+                </small>  
+            </div>  
+        
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Prijavi se</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Prijavi se</button>
+                    <small class="text-muted ml-2">
+                    <a class="btn btn-outline-info" href="{% url 'password_reset' %}">Zaboravio šifru?</a> 
+                    </small>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">Nemate nalog? <a class="ml-2" href="{% url 'registracija' %}">Registruj se</a>
+                </small>  
+            </div>  
+        </div>
+
+{% endblock content %}
